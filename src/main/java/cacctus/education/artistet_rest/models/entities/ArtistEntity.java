@@ -1,6 +1,6 @@
 package cacctus.education.artistet_rest.models.entities;
 
-import cacctus.education.artistet_rest.models.enums.Albums;
+import cacctus.education.artistet_rest.models.enums.Album;
 import cacctus.education.artistet_rest.models.enums.Gender;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name ="artist")
+@Table(name = "artists_entity")
 public class ArtistEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +26,5 @@ public class ArtistEntity {
     @Enumerated(EnumType.STRING)
     private Gender gender;
     @Enumerated(EnumType.STRING)
-    private List<Albums> albums;
-
+    private List<Album> albums;
 }
