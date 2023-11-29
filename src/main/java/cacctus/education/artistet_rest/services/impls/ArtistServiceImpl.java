@@ -50,7 +50,12 @@ public class ArtistServiceImpl implements ArtistService {
             throw new EntityNotFoundException("Artist with id:" + id + " is not found!");
         }
         var entity = optionalEntity.get();
-        BeanUtils.copyProperties(entity, artist);
+        entity.setName(artist.getName());
+        entity.setSurname(artist.getSurname());
+        entity.setNickname(artist.getNickname());
+        entity.setBirthdate(artist.getBirthdate());
+        entity.setAlbums(artist.getAlbums());
+        entity.setGender(artist.getGender());
         repository.save(entity);
     }
 
